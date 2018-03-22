@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <!--任务配置-->
+  <schedule>
+    <job>
+      <name>HufenSignInJob</name>
+      <group>HufenSignInJob</group>
+      <description>Task Job: Hufen Sign In Job</description>
+      <job-type>WeiboHufen.Job.SignInJob, WeiboHufen.Job</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>HufenSignInJobTrigger</name>
+        <group>HufenSignInJobTrigger</group>
+        <job-name>HufenSignInJob</job-name>
+        <job-group>HufenSignInJob</job-group>
+        <start-time>2018-01-01T00:00:00+08:00</start-time>
+        <cron-expression>0 0/7 5-23 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+
+</job-scheduling-data>

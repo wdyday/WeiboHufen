@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78D8123C-D2BE-4C8F-A23D-019F5A480B2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNetSpiderLite</RootNamespace>
+    <AssemblyName>DotNetSpiderLite</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.7.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.13\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly, Version=5.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.5.8.0\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.11.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\AppBase.cs" />
+    <Compile Include="Core\ContentType.cs" />
+    <Compile Include="Core\Downloader\BaseDownloader.cs" />
+    <Compile Include="Core\Downloader\DownloadException.cs" />
+    <Compile Include="Core\Downloader\HttpClientDownloader.cs" />
+    <Compile Include="Core\Downloader\IDownloader.cs" />
+    <Compile Include="Core\Env.cs" />
+    <Compile Include="Core\HttpExecuteRecord.cs" />
+    <Compile Include="Core\IClear.cs" />
+    <Compile Include="Core\IControllable.cs" />
+    <Compile Include="Core\IExecuteRecord.cs" />
+    <Compile Include="Core\IIdentity.cs" />
+    <Compile Include="Core\INamed.cs" />
+    <Compile Include="Core\Infrastructure\Browser.cs" />
+    <Compile Include="Core\Infrastructure\EncodingExtensions.cs" />
+    <Compile Include="Core\Infrastructure\Encrypt.cs" />
+    <Compile Include="Core\Infrastructure\HttpSender.cs" />
+    <Compile Include="Core\Infrastructure\LogCenter.cs" />
+    <Compile Include="Core\Infrastructure\NodeId.cs" />
+    <Compile Include="Core\Infrastructure\StreamExtensions.cs" />
+    <Compile Include="Core\Infrastructure\StringExtensions.cs" />
+    <Compile Include="Core\Infrastructure\UrlUtils.cs" />
+    <Compile Include="Core\Infrastructure\WindowsFormUtils.cs" />
+    <Compile Include="Core\Infrastructure\XTokenQueue.cs" />
+    <Compile Include="Core\IRunable.cs" />
+    <Compile Include="Core\ISpider.cs" />
+    <Compile Include="Core\ITask.cs" />
+    <Compile Include="Core\Page.cs" />
+    <Compile Include="Core\Redial\IRedialExecutor.cs" />
+    <Compile Include="Core\Redial\NetworkCenter.cs" />
+    <Compile Include="Core\Redial\RedialResult.cs" />
+    <Compile Include="Core\RegexUtils.cs" />
+    <Compile Include="Core\Request.cs" />
+    <Compile Include="Core\ResultItems.cs" />
+    <Compile Include="Core\Selector\BaseHtmlSelector.cs" />
+    <Compile Include="Core\Selector\BaseSelectable.cs" />
+    <Compile Include="Core\Selector\CssSelector.cs" />
+    <Compile Include="Core\Selector\DefaultSelector.cs" />
+    <Compile Include="Core\Selector\EnviromentSelector.cs" />
+    <Compile Include="Core\Selector\ISelectable.cs" />
+    <Compile Include="Core\Selector\ISelector.cs" />
+    <Compile Include="Core\Selector\JsonPathSelector.cs" />
+    <Compile Include="Core\Selector\RegexResult.cs" />
+    <Compile Include="Core\Selector\RegexSelector.cs" />
+    <Compile Include="Core\Selector\Selectable.cs" />
+    <Compile Include="Core\Selector\Selectors.cs" />
+    <Compile Include="Core\Selector\SelectorType.cs" />
+    <Compile Include="Core\Selector\XPathSelector.cs" />
+    <Compile Include="Core\Site.cs" />
+    <Compile Include="Core\Spider.cs" />
+    <Compile Include="Core\SpiderException.cs" />
+    <Compile Include="Core\StartUrlBuilder.cs" />
+    <Compile Include="Core\Status.cs" />
+    <Compile Include="Extention\Downloader\FormActionHandler.cs" />
+    <Compile Include="Extention\Downloader\IWebDriverHandler.cs" />
+    <Compile Include="Extention\Downloader\LoginHandler.cs" />
+    <Compile Include="Extention\Downloader\Utils.cs" />
+    <Compile Include="Extention\Downloader\WebDriverDownloader.cs" />
+    <Compile Include="Extention\Downloader\WebDriverHandler.cs" />
+    <Compile Include="Extention\Infrastructure\WebDriverExtensions.cs" />
+    <Compile Include="Extention\Model\Selector.cs" />
+    <Compile Include="HtmlAgilityPack\Either.cs" />
+    <Compile Include="HtmlAgilityPack\ExtensionMethods.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeExtensions.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeOps.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeSelection.cs" />
+    <Compile Include="HtmlAgilityPack\IElementOps.cs" />
+    <Compile Include="HtmlAgilityPack\ISelectorGenerator.cs" />
+    <Compile Include="HtmlAgilityPack\LRUCache.cs" />
+    <Compile Include="HtmlAgilityPack\NamespacePrefix.cs" />
+    <Compile Include="HtmlAgilityPack\Parser.cs" />
+    <Compile Include="HtmlAgilityPack\Reader.cs" />
+    <Compile Include="HtmlAgilityPack\Selector.cs" />
+    <Compile Include="HtmlAgilityPack\SelectorGenerator.cs" />
+    <Compile Include="HtmlAgilityPack\Token.cs" />
+    <Compile Include="HtmlAgilityPack\Tokener.cs" />
+    <Compile Include="HtmlAgilityPack\TokenKind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="nlog.default.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
