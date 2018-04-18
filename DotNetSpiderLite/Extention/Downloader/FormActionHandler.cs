@@ -74,7 +74,7 @@ namespace DotNetSpiderLite.Extension.Downloader
             }
             catch (Exception ex)
             {
-                Logger.AllLog($"LoginHandler failed: {ex}.", NLog.LogLevel.Error);
+                Logger.AllLog($"FormSubmitHandler failed: {ex}.", NLog.LogLevel.Error);
                 return false;
             }
         }
