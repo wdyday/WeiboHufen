@@ -22,10 +22,11 @@ namespace WeiboHufen.Job
 
         static void Main(string[] args)
         {
-            //Run();
-
             // set the current directory to the same directory as your windows service
             System.IO.Directory.SetCurrentDirectory(System.AppDomain.CurrentDomain.BaseDirectory);
+
+            // TEST
+            //Run();
 
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]

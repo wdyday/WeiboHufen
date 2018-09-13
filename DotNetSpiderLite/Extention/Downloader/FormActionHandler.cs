@@ -8,6 +8,7 @@ using DotNetSpiderLite.Extension.Model;
 using DotNetSpiderLite.Core.Infrastructure;
 using NLog;
 using System.Collections.Generic;
+using OpenQA.Selenium.Support.UI;
 
 namespace DotNetSpiderLite.Extension.Downloader
 {
@@ -66,7 +67,7 @@ namespace DotNetSpiderLite.Extension.Downloader
                 var submit = Utils.FindElement(webDriver, SubmitSelector);
                 submit.Click();
                 Thread.Sleep(WaitSeconds * 1000);
-
+                
                 // 页面子操作
                 DoChildFormActions(webDriver);
 

@@ -1,0 +1,4 @@
+﻿webdriver 下载地址
+http://chromedriver.chromium.org/
+webdriver 国内镜像
+http://npm.taobao.org/mirrors/chromedriver/
